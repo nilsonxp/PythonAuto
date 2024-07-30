@@ -134,6 +134,7 @@ sleep(3)
 
 
 # DESAFIO 6
+# trabalhando com dropdown
 paises_select = driver.find_elements(By.ID,'paisesselect')
 ActionChains(driver).move_to_element(paises_select[0]).perform()
 sleep(1)
@@ -143,6 +144,18 @@ pais_africa = driver.find_element(By.XPATH,"//select/option[@value='africa']").c
 sleep(1)
 pais_chile = driver.find_element(By.XPATH,"//select/option[@value='chille']").click()
 sleep(3)
+
+# # outro modo
+# from selenium.webdriver.support.select import Select
+# opcoes = Select(paises_select)
+# # por indice
+# opcoes.select_by_index(2)
+# # por valor
+# opcoes.select_by_value('estadosunidos')
+# # por texto de exibição
+# opcoes.select_by_visible_text('Brasil')
+
+
 
 # DESAFIO 7
 # Abre nova janela
