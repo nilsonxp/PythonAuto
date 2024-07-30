@@ -181,11 +181,14 @@ for janela in janelas:
 # Executar as ações na nova janela
 driver.get('https://cursoautomacao.netlify.app/janeladesafio')
 opiniao_curso = driver.find_element(By.ID, 'opiniao_sobre_curso')
-opiniao_curso.send_keys('Melhor curso que já vi na internet!!')
+opiniao_curso.send_keys('python')
 pesquisar = driver.find_element(By.ID, 'fazer_pesquisa').click()
 
 sleep(3)
+
+# voltando para a janela original
 driver.switch_to.window(janela_original)
+# continua automação
 fim_curso_texto = driver.find_element(By.ID,'campo_desafio7')
 ActionChains(driver).move_to_element(nova_janela).perform()
 fim_curso_texto.send_keys('Que curso incrível!!')
